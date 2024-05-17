@@ -7,21 +7,7 @@ import { Request, Response } from "express";
 
 import { Deposit } from "../../models/Deposit";
 
-const paystackSecret = config.PAYSTACK_SECRET;
-
 export const deposit = async (req: Request, res: Response) => {
-  /* if (!errors.isEmpty()) {
-    console.log(errors);
-    let _errors = errors.array().map((error) => {
-      return {
-        msg: error.msg,
-        field: error.param,
-        success: false,
-      };
-    })[0];
-    return res.status(400).json(_errors);
-  } */
-
   let user = req.user?.id;
   let { amount } = req.body;
   try {

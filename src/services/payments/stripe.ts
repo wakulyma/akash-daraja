@@ -1,10 +1,8 @@
 import { Request, Response } from "express";
-import Stripe from "stripe";
-import { STRIPE, config } from "../../config/config";
+
+import { STRIPE } from "../../config/config";
 import { User } from "../../models/User";
 import { Deposit } from "../../models/Deposit";
-
-const STRIPE_SECRET = config.STRIPE_API_KEY;
 
 const stripe = STRIPE;
 

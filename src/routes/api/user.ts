@@ -3,7 +3,6 @@ import { check } from "express-validator";
 import { login, signUp } from "../../controllers/userAuth";
 import { validateRequest } from "../../middlewares/validate-request";
 import { validateToken } from "../../middlewares/auth";
-import { deposit } from "../../services/payments/paystack";
 import { stripeDeposits } from "../../services/payments/stripe";
 
 const router = Router();

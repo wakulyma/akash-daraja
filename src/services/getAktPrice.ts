@@ -15,10 +15,8 @@ export const getAktPrice = async () => {
     let price = response.data.data["7431"].quote.USD.price;
     console.log("Fetched AKT price as", price);
 
-    
     return price;
   } catch (err) {
     console.log(err);
   }
 };
-
