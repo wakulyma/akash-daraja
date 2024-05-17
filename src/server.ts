@@ -6,6 +6,7 @@ import { createServer } from "http";
 import { cpus } from "os";
 import cluster from "cluster";
 import { config } from "./config/config";
+import { getAktPrice } from "./services/getAktPrice";
 
 let db: any;
 (async () => {

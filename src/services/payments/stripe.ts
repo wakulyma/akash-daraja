@@ -8,6 +8,7 @@ const STRIPE_SECRET = config.STRIPE_API_KEY;
 
 const stripe = STRIPE;
 
+//
 export const stripeDeposits = async (req: Request, res: Response) => {
   try {
     let userId = req.user.id;
@@ -32,13 +33,13 @@ export const stripeDeposits = async (req: Request, res: Response) => {
       ],
       metadata: { walletAddress: walletAddress },
       mode: "payment",
-      success_url: "https://google.com",
-      cancel_url: "https://youtube.com",
+      success_url: "https://deploy.cloudmos.io/",
+      cancel_url: "https://deploy.cloudmos.io/",
       customer_email: userEmail,
     });
 
     await Deposit.create({
-      amount: amount * 10 ** 2,
+      amount: amount * 10 ** 2, //is stored in cents
       userId: userId,
       timeInitiated: Date.now(),
       paymentGateway: "STRIPE",
@@ -46,8 +47,7 @@ export const stripeDeposits = async (req: Request, res: Response) => {
       referenceId: session.id,
     });
 
-    //emit an event to signal the deposit intent has been created in the db: hashed and store the deposit document onchain; smart contract
-    //with key as reference id, and hash as value
+    console.log(`Initiated Chekout Session ${session.id}`);
 
     return res.status(200).json({ url: session.url, success: true });
   } catch (err) {

@@ -15,6 +15,13 @@ export const config = {
 
   PORT: process.env.PORT,
 
+  AKT_ID_COINMARKET_CAP: 7431,
+
+  COINMARKET_CAP_AKT_PRICE_URL:
+    "https://pro-api.coinmarketcap.com/v2/cryptocurrency/quotes/latest?id=7431",
+  
+  COINMARKET_CAP_API_KEY: process.env.COINMARKET_CAP_API_KEY,
+
   AKASH_RPC_URL: process.env.AKASH_RPC_URL!,
 
   COSMOS_MNEMONIC: process.env.COSMOS_MNEMONIC!,
@@ -24,4 +31,3 @@ export const config = {
 };
 
 export const STRIPE = new Stripe(config.STRIPE_API_KEY);
-

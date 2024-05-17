@@ -10,6 +10,7 @@ const router = Router();
 
 router.post(
   "/signup",
+  json(),
   validateRequest,
   [
     check("phone_number", "Phone Number is required").not().isEmpty().trim(),
@@ -54,6 +55,6 @@ router.post(
   login
 );
 
-router.post("/deposit", json(), validateToken, validateRequest, stripeDeposits);
+router.post("/deposit", json(), validateRequest, validateToken, stripeDeposits);
 
 module.exports = router;
