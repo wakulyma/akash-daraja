@@ -7,6 +7,7 @@ import { cpus } from "os";
 import cluster from "cluster";
 import { config } from "./config/config";
 import { getAktPrice } from "./services/getAktPrice";
+import { backupDBStateCron } from "./cronJobs/dbDumpCron";
 
 let db: any;
 (async () => {
@@ -56,3 +57,5 @@ httpServer.listen(config.PORT || 5000, () => {
     `PID ${process.pid} \n`
   );
 });
+
+backupDBStateCron.start();
