@@ -15,6 +15,8 @@ export const config = {
 
   PORT: process.env.PORT,
 
+  COSMOS_MNEMONIC: process.env.COSMOS_MNEMONIC!,
+
   JWT_SECRET: process.env.JWT_SECRET!,
   JWT_TOKEN_EXPIRES_IN: 3600000 * 12, //expires in 12hours
 };
