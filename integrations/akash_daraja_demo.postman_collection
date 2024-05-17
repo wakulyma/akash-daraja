@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "2c7d7ac7-ff64-40d7-9120-e6f99b92dcf1",
-		"name": "akasha daraja demo",
+		"_postman_id": "0909015f-ec35-40c6-aa68-207fbdd96546",
+		"name": "akash daraja demo",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "27347993",
-		"_collection_link": "https://www.postman.com/tiovobet/workspace/akasha-daraja/collection/27347993-2c7d7ac7-ff64-40d7-9120-e6f99b92dcf1?action=share&source=collection_link&creator=27347993"
+		"_exporter_id": "35018695",
+		"_collection_link": "https://akash-daraja.postman.co/workspace/57f8f0ca-efb6-4f83-8128-1284f2c1cdda/collection/35018695-0909015f-ec35-40c6-aa68-207fbdd96546?action=share&source=collection_link&creator=35018695"
 	},
 	"item": [
 		{
@@ -22,9 +22,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{URL}}/daraja/api/v1/user/signup",
+					"raw": "http://167.71.137.178/daraja/api/v1/user/signup",
+					"protocol": "http",
 					"host": [
-						"{{URL}}"
+						"167",
+						"71",
+						"137",
+						"178"
 					],
 					"path": [
 						"daraja",
@@ -52,9 +56,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{URL}}/daraja/api/v1/user/login",
+					"raw": "http://167.71.137.178/daraja/api/v1/user/login",
+					"protocol": "http",
 					"host": [
-						"{{URL}}"
+						"167",
+						"71",
+						"137",
+						"178"
 					],
 					"path": [
 						"daraja",
@@ -87,9 +95,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{URL}}/daraja/api/v1/user/deposit",
+					"raw": "http://167.71.137.178/daraja/api/v1/user/deposit",
+					"protocol": "http",
 					"host": [
-						"{{URL}}"
+						"167",
+						"71",
+						"137",
+						"178"
 					],
 					"path": [
 						"daraja",
