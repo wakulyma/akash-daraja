@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "2c7d7ac7-ff64-40d7-9120-e6f99b92dcf1",
+		"name": "akasha daraja demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27347993",
+		"_collection_link": "https://www.postman.com/tiovobet/workspace/akasha-daraja/collection/27347993-2c7d7ac7-ff64-40d7-9120-e6f99b92dcf1?action=share&source=collection_link&creator=27347993"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"usertest29\",\r\n    \"phone_number\":\"0729444444\",\r\n    \"email\":\"test29@gmail.com\",\r\n    \"password\":\"Test33@\",\r\n    \"confirm_password\":\"Test33@\",\r\n    \"first_name\": \"user\",\r\n    \"last_name\": \"056\",\r\n    \"date_of_birth\": \"1998-04-11\", //In YYYY-MM-DD format\r\n    \"gender\": \"m\", //Either m or f\r\n    \"city\": \"Nairobi\",\r\n    \"country\": \"ke\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/v1/user/signup",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"test29@gmail.com\", \r\n    //\"phone_number\":\"0729444444\",\r\n    \"password\":\"Test33@\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/v1/user/login",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deposit",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\":5000,\r\n    \"walletAddress\":\"0xcc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/v1/user/deposit",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"deposit"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"var jsonData = JSON.parse(responseBody);\r",
+					"console.log(jsonData)\r",
+					"\r",
+					"if(jsonData.token){\r",
+					"    postman.setEnvironmentVariable('token', `x-auth-token ${jsonData.token}`);\r",
+					"}"
+				]
+			}
+		}
+	]
+}
