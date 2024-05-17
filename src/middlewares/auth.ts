@@ -22,10 +22,8 @@ export const validateToken = (
           .status(401)
           .json({ msg: "Unauthorized request!", success: false });
       } else {
-        
-        
         req.user = decoded?.user || decoded;
-       // req.activeBalance = decoded?.activeBalance;
+
         next();
       }
     });

@@ -14,10 +14,6 @@ const WalletSchema = new Schema<IWallet>({
     type: String,
     required: true,
   },
-  sswissDecimals: {
-    type: Number,
-    default: 2,
-  },
 });
 
 export const Wallet = model<IWallet>("Wallet", WalletSchema);

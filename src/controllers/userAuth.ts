@@ -90,11 +90,7 @@ export const signUp = async (req: Request, res: Response) => {
       currency: "USD",
     });
 
-    //create wallets for other currencies
-
-    //create crypto wallet: moved to be created on demand cos wallet will automatically get a gas deposit
-    //await createCryptoWallet(user.id);
-
+  
     let _user = {
       username: user.username,
       walletBalance: wallet.currentBalance,
@@ -103,7 +99,7 @@ export const signUp = async (req: Request, res: Response) => {
     const payload = {
       user: {
         id: user._id,
-        activeBalance: "NGN", //default will be NGN
+        
       },
     };
     sign(
