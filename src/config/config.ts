@@ -15,10 +15,12 @@ export const config = {
 
   PORT: process.env.PORT,
 
+  AKASH_RPC_URL: process.env.AKASH_RPC_URL!,
+
   COSMOS_MNEMONIC: process.env.COSMOS_MNEMONIC!,
 
   JWT_SECRET: process.env.JWT_SECRET!,
-  JWT_TOKEN_EXPIRES_IN: 3600000 * 12, //expires in 12hours
+  JWT_TOKEN_EXPIRES_IN: 3600000 * 1, //expires in 1hours
 };
 
 export const STRIPE = new Stripe(config.STRIPE_API_KEY);

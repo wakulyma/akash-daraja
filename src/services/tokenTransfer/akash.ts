@@ -1,12 +1,13 @@
 import { SigningStargateClient, assertIsDeliverTxSuccess } from "@cosmjs/stargate";
 import { Secp256k1HdWallet } from "@cosmjs/amino";
+import { config } from "../../config/config";
 
-const mnemonic = "coral fly first shrimp plunge fruit work maximum history dry pet recycle"
+const mnemonic = config.COSMOS_MNEMONIC
 
-const rpcEndpoint = "https://rpc.sandbox-01.aksh.pw:443"
+const rpcEndpoint = config.AKASH_RPC_URL
 
 
-
+//transfers AKT to user's wallet address after deposit is confirmed by payment gateway
 export const transferAKT = async (recipient_: string, USD_Amount_In_Cents: number)=>{
    try {
     const wallet = await Secp256k1HdWallet.fromMnemonic(mnemonic, {prefix:"akash"})
