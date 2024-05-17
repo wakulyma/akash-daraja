@@ -14,7 +14,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\":\"usertest29\",\r\n    \"phone_number\":\"0729444444\",\r\n    \"email\":\"test29@gmail.com\",\r\n    \"password\":\"Test33@\",\r\n    \"confirm_password\":\"Test33@\",\r\n    \"first_name\": \"user\",\r\n    \"last_name\": \"056\",\r\n    \"date_of_birth\": \"1998-04-11\", //In YYYY-MM-DD format\r\n    \"gender\": \"m\", //Either m or f\r\n    \"city\": \"Nairobi\",\r\n    \"country\": \"ke\"\r\n}",
+					"raw": "{\r\n    \"username\":\"iankine\",\r\n    \"phone_number\":\"0712345678\",\r\n    \"email\":\"iankine44@gmail.com\",\r\n    \"password\":\"Test33@\",\r\n    \"confirm_password\":\"Test33@\",\r\n    \"first_name\": \"ian\",\r\n    \"last_name\": \"kine\",\r\n    \"date_of_birth\": \"1998-04-11\", //In YYYY-MM-DD format\r\n    \"gender\": \"m\", //Either m or f\r\n    \"city\": \"Nairobi\",\r\n    \"country\": \"ke\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -22,11 +22,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{URL}}/api/v1/user/signup",
+					"raw": "{{URL}}/daraja/api/v1/user/signup",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
+						"daraja",
 						"api",
 						"v1",
 						"user",
@@ -43,7 +44,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\":\"test29@gmail.com\", \r\n    //\"phone_number\":\"0729444444\",\r\n    \"password\":\"Test33@\"\r\n}\r\n",
+					"raw": "{\r\n    \"email\":\"iankine44@gmail.com\", \r\n    \"password\":\"Test33@\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -51,11 +52,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{URL}}/api/v1/user/login",
+					"raw": "{{URL}}/daraja/api/v1/user/login",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
+						"daraja",
 						"api",
 						"v1",
 						"user",
@@ -77,7 +79,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"amount\":5000,\r\n    \"walletAddress\":\"0xcc\"\r\n}",
+					"raw": "{\r\n    \"amount\":50, //amount in USD\r\n    \"walletAddress\":\"akash1mq3z5rartvzvzdgqeqkyzrj2m440fxgeytvyzj\"\r\n\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -85,11 +87,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{URL}}/api/v1/user/deposit",
+					"raw": "{{URL}}/daraja/api/v1/user/deposit",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
+						"daraja",
 						"api",
 						"v1",
 						"user",
